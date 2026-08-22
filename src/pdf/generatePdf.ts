@@ -40,13 +40,14 @@ export interface PdfResources {
 const PAGE_W = 595.28;
 const PAGE_H = 841.89;
 const MARGIN = 10;
-const GAP = 8;
 const COLS = 4;
 const ROWS = 2;
 export const TAGS_PER_PAGE = COLS * ROWS;
-const CARD_W = (PAGE_W - 2 * MARGIN - (COLS - 1) * GAP) / COLS; // ≈ 137.8 pt
-/** Proporzioni ~2:1 come nel mock Figma (505×1003 px). */
-const CARD_H = 280;
+/** Dimensioni targhetta (larghezza × altezza). */
+const CARD_W = 142.3;
+const CARD_H = 283.6;
+/** Gap uniforme: lo spazio orizzontale residuo tra 4 card e i margini da 10 pt. */
+const GAP = (PAGE_W - 2 * MARGIN - COLS * CARD_W) / (COLS - 1);
 
 // ---- Colori ----------------------------------------------------------------
 
