@@ -37,16 +37,20 @@ export interface PdfResources {
 
 // ---- Pagina A4 e griglia -------------------------------------------------
 
-const PAGE_W = 595.28;
-const PAGE_H = 841.89;
+// ---- Pagina A4 e griglia -------------------------------------------------
+// 1 in = 72 pt = 2,54 cm  →  1 cm = 72/2,54 pt
+
+const PT_PER_CM = 72 / 2.54;
+const PAGE_W = 21 * PT_PER_CM; // A4: 210 mm
+const PAGE_H = 29.7 * PT_PER_CM; // A4: 297 mm
 const MARGIN = 10;
 const COLS = 4;
 const ROWS = 2;
 export const TAGS_PER_PAGE = COLS * ROWS;
-/** Dimensioni targhetta (larghezza × altezza). */
-const CARD_W = 142.3;
-const CARD_H = 283.6;
-/** Gap uniforme: lo spazio orizzontale residuo tra 4 card e i margini da 10 pt. */
+/** Targhetta: 5 cm × 10 cm (bordo esterno). */
+const CARD_W = 5 * PT_PER_CM;
+const CARD_H = 10 * PT_PER_CM;
+/** Gap uniforme: spazio residuo in orizzontale tra 4 card e i margini da 10 pt. */
 const GAP = (PAGE_W - 2 * MARGIN - COLS * CARD_W) / (COLS - 1);
 
 // ---- Colori ----------------------------------------------------------------
