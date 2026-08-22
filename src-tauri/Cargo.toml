@@ -1,6 +1,6 @@
 [package]
 name = "pricecreator"
-version = "1.0.2"
+version = "1.0.1"
 description = "Generatore di cartellini prezzo Doctor Phone"
 authors = ["Doctor Phone"]
 edition = "2021"
